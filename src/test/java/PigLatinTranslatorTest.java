@@ -28,7 +28,6 @@ public class PigLatinTranslatorTest {
         assertEquals("iglooay", pigLatinTranslator.translate("igloo"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testWordBeginningWithO() {
         assertEquals("objectay", pigLatinTranslator.translate("object"));

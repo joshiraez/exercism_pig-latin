@@ -4,13 +4,13 @@ public class PigLatinTranslator {
 
     public String translate(final String toTranslate) {
 
-        if (wordBeginsWithAorEorI(toTranslate)) return toTranslate + "ay";
+        if (wordBeginsWithAorEorIorO(toTranslate)) return toTranslate + "ay";
 
         return null;
     }
 
-    private boolean wordBeginsWithAorEorI(String toTest) {
-        return Pattern.compile("^[aei]")
+    private boolean wordBeginsWithAorEorIorO(String toTest) {
+        return Pattern.compile("^[aeio]")
                 .asPredicate()
                 .test(toTest);
     }

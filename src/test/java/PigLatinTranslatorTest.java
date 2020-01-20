@@ -58,7 +58,6 @@ public class PigLatinTranslatorTest {
         assertEquals("objectay", pigLatinTranslator.translate("object"));
     }
 
-    @Ignore
     @Test
     public void testWordBeginningWithUUppercase() {
         assertEquals("underay", pigLatinTranslator.translate("under"));

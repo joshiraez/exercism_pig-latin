@@ -13,8 +13,8 @@ public class PigLatinTranslator {
     private final Pattern STARTS_WITH_XR
             = Pattern.compile("^[xX][rR]");
 
-    private final Pattern ALL_CONSONANTS_AND_QU_GROUPS
-            = Pattern.compile("^((qu)|[^ueaio])*");
+    private final Pattern ALL_CONSONANTS_AND_STARTING_WITH_Y_AND_QU_GROUPS
+            = Pattern.compile("^((qu)|[^ueaio])((qu)|[^ueaiyo])*");
 
     public String translate(final String toTranslate) {
 
@@ -39,7 +39,7 @@ public class PigLatinTranslator {
 
     private String moveConsonantsToEnd(final String toTransform) {
 
-        final Matcher vowelMatcher = ALL_CONSONANTS_AND_QU_GROUPS.matcher(toTransform);
+        final Matcher vowelMatcher = ALL_CONSONANTS_AND_STARTING_WITH_Y_AND_QU_GROUPS.matcher(toTransform);
 
         if (vowelMatcher.find())
             return toTransform.substring(vowelMatcher.end()) + toTransform.substring(0, vowelMatcher.end());

@@ -1,10 +1,9 @@
-/*
+public class PigLatinTranslator {
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+    public String translate(final String toTranslate) {
 
-Please remove this comment when submitting your solution.
+        if(toTranslate.startsWith("a")) return toTranslate + "ay";
 
-*/
+        return null;
+    }
+}

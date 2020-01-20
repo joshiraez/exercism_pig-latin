@@ -4,6 +4,7 @@ public class PigLatinTranslator {
 
         if(toTranslate.startsWith("a")) return toTranslate + "ay";
         if(toTranslate.startsWith("e")) return toTranslate + "ay";
+        if (toTranslate.startsWith("i")) return toTranslate + "ay";
 
         return null;
     }

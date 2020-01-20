@@ -5,7 +5,8 @@ public class PigLatinTranslator {
     public String translate(final String toTranslate) {
 
         if (wordBeginsWithAnyVowel(toTranslate)
-                || wordBeginsWithYt(toTranslate))
+                || wordBeginsWithYt(toTranslate)
+                || wordBeginsWithXr(toTranslate))
             return toTranslate + "ay";
 
         return null;
@@ -19,6 +20,12 @@ public class PigLatinTranslator {
 
     private boolean wordBeginsWithYt(final String toTest) {
         return Pattern.compile("^[yt]")
+                .asPredicate()
+                .test(toTest.toLowerCase());
+    }
+
+    private boolean wordBeginsWithXr(final String toTest) {
+        return Pattern.compile("^[xr]")
                 .asPredicate()
                 .test(toTest.toLowerCase());
     }

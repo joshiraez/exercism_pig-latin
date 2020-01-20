@@ -63,7 +63,6 @@ public class PigLatinTranslatorTest {
         assertEquals("underay", pigLatinTranslator.translate("under"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testWordBeginningWithVowelAndFollowedByQu() {
         assertEquals("equalay", pigLatinTranslator.translate("equal"));

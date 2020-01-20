@@ -1,8 +1,11 @@
 import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static java.util.Arrays.asList;
+import static java.util.stream.Stream.of;
 
 public class PigLatinTranslator {
 
@@ -18,6 +21,12 @@ public class PigLatinTranslator {
 
     public String translate(final String toTranslate) {
 
+        return of(toTranslate.split(" "))
+                .map(this::translateWord)
+                .collect(Collectors.joining(" "));
+    }
+
+    private String translateWord(final String toTranslate) {
         if (anyOf(
                 testThat(toTranslate, STARTS_WITH_VOWEL),
                 testThat(toTranslate, STARTS_WITH_YT),

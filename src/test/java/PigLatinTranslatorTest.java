@@ -33,9 +33,37 @@ public class PigLatinTranslatorTest {
         assertEquals("objectay", pigLatinTranslator.translate("object"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testWordBeginningWithU() {
+        assertEquals("underay", pigLatinTranslator.translate("under"));
+    }
+
+    @Test
+    public void testWordBeginningWithAUppercase() {
+        assertEquals("Appleay", pigLatinTranslator.translate("Apple"));
+    }
+
+    @Ignore
+    @Test
+    public void testWordBeginningWithEUppercase() {
+        assertEquals("earay", pigLatinTranslator.translate("ear"));
+    }
+
+    @Ignore
+    @Test
+    public void testWordBeginningWithIUppercase() {
+        assertEquals("iglooay", pigLatinTranslator.translate("igloo"));
+    }
+
+    @Ignore
+    @Test
+    public void testWordBeginningWithOUppercase() {
+        assertEquals("objectay", pigLatinTranslator.translate("object"));
+    }
+
+    @Ignore
+    @Test
+    public void testWordBeginningWithUUppercase() {
         assertEquals("underay", pigLatinTranslator.translate("under"));
     }
 
